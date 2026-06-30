@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KARSA // CUBI CRYSTAL</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Space+Grotesk:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+:root{
+  --obsidian:#0a0a0f;--deep:#1a0a1a;--amber:#ff5520;--copper:#cd7f32;
+  --teal:#00d9ff;--bone:#e8e6e1;--glow:#ff5520;--panel:rgba(10,10,15,.92);
+  --border:rgba(205,127,50,.3);--ink:#e8e6e1;--glyph:#ff5520
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#000;color:var(--ink);overflow-x:hidden}
+body{
+  background:
+    radial-gradient(circle at 30% 20%,rgba(255,107,53,.08),transparent 50%),
+    radial-gradient(circle at 70% 80%,rgba(0,217,255,.06),transparent 50%),
+    repeating-conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(205,127,50,.02) 1deg, transparent 2deg),
+    linear-gradient(180deg,#000 0%,#0a0a0f 50%,#000 100%),
+    #000;
+  font-family:'Space Grotesk',sans-serif;
+  animation:volcanic-shift 30s ease-in-out infinite
+}
+@keyframes volcanic-shift{
+  0%,100%{background-position:0 0,0 0,0 0,0 0,0 0}
+  50%{background-position:50px 50px,-50px -50px,0 0,0 0,0 0}
+}
+.container{max-width:1600px;margin:0 auto;padding:30px;position:relative;z-index:10}
+.glyph-border{
+  position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1000;
+  background:
+    repeating-linear-gradient(90deg,transparent,transparent calc(100% - 2px),rgba(205,127,50,.15) calc(100% - 2px),rgba(205,127,50,.15) 100%),
+    repeating-linear-gradient(0deg,transparent,transparent calc(100% - 2px),rgba(205,127,50,.15) calc(100% - 2px),rgba(205,127,50,.15) 100%);
+  background-size:80px 80px;
+  opacity:0.3
+}
+.header{
+  border:none;background:var(--panel);backdrop-filter:blur(30px);
+  padding:50px;margin-bottom:40px;position:relative;overflow:hidden;
+  box-shadow:0 0 80px rgba(255,107,53,.2),inset 0 0 80px rgba(0,0,0,.8);
+  clip-path:polygon(30px 0,calc(100% - 30px) 0,100% 30px,100% calc(100% - 30px),calc(100% - 30px) 100%,30px 100%,0 calc(100% - 30px),0 30px)
+}
+.header::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,transparent 0%,rgba(255,107,53,.1) 50%,transparent 100%);
+  animation:obsidian-shimmer 6s ease-in-out infinite
+}
+@keyframes obsidian-shimmer{
+  0%,100%{opacity:0.3;transform:translateX(-100%)}
+  50%{opacity:0.6;transform:translateX(100%)}
+}
+.glyph-ornament{
+  font-family:'Cinzel',serif;font-size:32px;color:var(--copper);
+  text-align:center;margin:20px 0;letter-spacing:1em;opacity:0.6
+}
+.glyph-ornament::before{content:'◊ ◈ ◊ ◈ ◊'}
+h1{
+  font-family:'Cinzel',serif;font-size:72px;font-weight:700;
+  color:var(--amber);letter-spacing:.3em;text-align:center;margin:0;
+  text-shadow:0 0 30px var(--glow),0 0 60px var(--glow),3px 3px 0 var(--deep);
+  animation:obsidian-pulse 5s ease-in-out infinite
+}
+@keyframes obsidian-pulse{
+  0%,100%{filter:brightness(1)}
+  50%{filter:brightness(1.3)}
+}
+.subtitle{
+  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;
+  color:var(--teal);text-align:center;margin:15px 0;letter-spacing:.5em;text-transform:uppercase;
+  text-shadow:0 0 15px var(--teal)
+}
+.tagline{
+  font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--copper);
+  text-align:center;margin:12px 0;letter-spacing:.3em
+}
+.law{
+  font-size:13px;color:var(--amber);font-family:'JetBrains Mono',monospace;
+  text-align:center;padding:18px;background:rgba(255,107,53,.06);border:1px solid var(--copper);
+  margin:25px 0;letter-spacing:.2em;text-transform:uppercase;
+  box-shadow:0 0 30px rgba(255,107,53,.15),inset 0 0 30px rgba(0,0,0,.5);
+  clip-path:polygon(15px 0,100% 0,calc(100% - 15px) 100%,0 100%)
+}
+.hex-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:40px;margin:50px 0;
+  position:relative
+}
+.hex-grid::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:2px;height:80%;background:linear-gradient(180deg,transparent,var(--copper),transparent);
+  opacity:0.3
+}
+.hex-grid::after{
+  content:'';position:absolute;top:50%;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--copper),transparent);
+  opacity:0.3
+}
+.hex-tile{
+  border:2px solid var(--copper);background:var(--panel);backdrop-filter:blur(20px);
+  padding:45px;position:relative;overflow:hidden;min-height:450px;
+  box-shadow:0 0 40px rgba(205,127,50,.2),inset 0 0 40px rgba(0,0,0,.7);
+  transition:all .4s;cursor:pointer;
+  clip-path:polygon(50px 0,100% 0,100% calc(100% - 50px),calc(100% - 50px) 100%,0 100%,0 50px)
+}
+.hex-tile::before{
+  content:'';position:absolute;inset:-2px;
+  background:conic-gradient(from 0deg,var(--amber),var(--copper),var(--teal),var(--amber));
+  z-index:-1;opacity:0;transition:opacity .4s;
+  animation:glyph-rotate 8s linear infinite
+}
+@keyframes glyph-rotate{to{transform:rotate(360deg)}}
+.hex-tile:hover::before{opacity:0.8}
+.hex-tile:hover{
+  transform:translateY(-8px) scale(1.03);
+  box-shadow:0 0 100px rgba(255,107,53,.4),inset 0 0 100px rgba(255,107,53,.2)
+}
+.glyph-header{
+  font-family:'Cinzel',serif;font-size:38px;font-weight:600;
+  color:var(--amber);letter-spacing:.15em;text-transform:uppercase;text-align:center;
+  margin:0 0 25px 0;text-shadow:0 0 25px var(--glow);
+  position:relative
+}
+.glyph-header::before,.glyph-header::after{
+  content:'◈';position:absolute;top:50%;transform:translateY(-50%);
+  font-size:20px;color:var(--copper);opacity:0.7
+}
+.glyph-header::before{left:-30px}
+.glyph-header::after{right:-30px}
+.hex-tile p{
+  font-size:14px;color:var(--ink);line-height:1.9;margin:20px 0;
+  font-family:'Space Grotesk',sans-serif;font-weight:300;text-align:center;
+  text-shadow:0 0 8px rgba(232,230,225,.3)
+}
+.glyph-links{display:grid;grid-template-columns:1fr;gap:12px;margin-top:30px}
+.glyph-links a{
+  display:block;padding:14px 22px;
+  background:rgba(205,127,50,.08);border:1px solid var(--copper);color:var(--ink);
+  text-decoration:none;font-size:12px;text-transform:uppercase;letter-spacing:.15em;
+  font-family:'JetBrains Mono',monospace;font-weight:600;transition:all .3s;text-align:center;
+  position:relative;overflow:hidden;
+  clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%)
+}
+.glyph-links a::before{
+  content:'◊';position:absolute;left:10px;top:50%;transform:translateY(-50%);
+  color:var(--amber);opacity:0;transition:opacity .3s
+}
+.glyph-links a:hover::before{opacity:1}
+.glyph-links a::after{
+  content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,107,53,.3),transparent);
+  transition:left .6s
+}
+.glyph-links a:hover::after{left:100%}
+.glyph-links a:hover{
+  background:var(--amber);color:var(--obsidian);border-color:var(--amber);
+  box-shadow:0 0 25px var(--glow),inset 0 0 25px rgba(0,0,0,.4);
+  text-shadow:0 0 10px var(--obsidian);transform:translateX(5px)
+}
+.footer{
+  margin-top:70px;padding:35px;border-top:2px solid var(--copper);
+  font-size:12px;color:var(--copper);text-align:center;
+  font-family:'JetBrains Mono',monospace;letter-spacing:.1em;
+  text-shadow:0 0 10px var(--copper);background:rgba(205,127,50,.05)
+}
+.archive-data{
+  position:fixed;font-size:10px;color:var(--teal);font-family:'JetBrains Mono',monospace;
+  text-shadow:0 0 8px var(--teal);z-index:1001;pointer-events:none;
+  background:rgba(0,217,255,.08);padding:8px 12px;border:1px solid var(--teal)
+}
+.archive-data.tl{top:25px;left:25px}
+.archive-data.tr{top:25px;right:25px;text-align:right}
+.archive-data.bl{bottom:25px;left:25px}
+.archive-data.br{bottom:25px;right:25px;text-align:right}
+.obsidian-shard{
+  position:fixed;width:100px;height:100px;pointer-events:none;z-index:5;
+  background:radial-gradient(circle,rgba(255,107,53,.1),transparent);
+  filter:blur(40px);animation:shard-float 15s ease-in-out infinite
+}
+@keyframes shard-float{
+  0%,100%{transform:translate(0,0) scale(1)}
+  33%{transform:translate(30px,-30px) scale(1.2)}
+  66%{transform:translate(-20px,20px) scale(0.8)}
+}
+.content-page{
+  max-width:900px;margin:40px auto;padding:50px;
+  background:var(--panel);border:2px solid var(--copper);
+  box-shadow:0 0 60px rgba(205,127,50,.2);
+  clip-path:polygon(20px 0,100% 0,100% calc(100% - 20px),calc(100% - 20px) 100%,0 100%,0 20px)
+}
+.content-page h2{
+  font-family:'Cinzel',serif;font-size:42px;color:var(--amber);
+  text-align:center;margin-bottom:30px;text-shadow:0 0 20px var(--glow)
+}
+.content-page p{
+  font-size:15px;line-height:1.8;margin:20px 0;color:var(--ink)
+}
+.back-link{
+  display:inline-block;margin-top:30px;padding:12px 24px;
+  background:var(--copper);color:var(--obsidian);text-decoration:none;
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;
+  clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);
+  transition:all .3s
+}
+.back-link:hover{
+  background:var(--amber);box-shadow:0 0 20px var(--glow)
+}
+
+</style>
+</head>
+<body>
+<div class="glyph-border"></div>
+<div class="obsidian-shard" style="top:10%;left:10%;animation-delay:0s"></div>
+<div class="obsidian-shard" style="top:70%;right:15%;animation-delay:5s"></div>
+<div class="archive-data tl">ARCHIVE://KARSA<br>SECTOR: 1=π×3<br>STATUS: ACTIVE</div>
+<div class="archive-data tr">ENERGY: 99.9%<br>GLYPHS: 42<br>WITNESS: a7f3c891</div>
+<div class="archive-data bl">ORIGIN: 1843<br>EXCAVATION: 2026<br>ERA: OBSIDIAN</div>
+<div class="archive-data br">GAS: THEFT<br>WIDTH: LAW<br>RTS: SENDER</div>
+
+<div class="container">
+  <div class="header">
+    <div class="glyph-ornament"></div>
+    <h1>CUBI CRYSTAL</h1>
+    <div class="subtitle">3×3×3 Relic</div>
+    <div class="glyph-ornament"></div>
+  </div>
+  
+  <div class="content-page">
+    <h2>Crystal Structure</h2><p>27 facets. 8 vertices. The cubi crystal was the old form. Now simplified: π × 3.</p>
+    <a href="index.html" class="back-link">← RETURN TO ARCHIVE</a>
+  </div>
+</div>
+</body>
+</html>
