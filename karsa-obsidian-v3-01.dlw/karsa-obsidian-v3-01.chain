@@ -1,0 +1,9 @@
+ROOT0-DLW-CHAIN-v1
+index : 233
+slug  : karsa-obsidian-v3-01
+seal  : a6b369ea908093bc0a2fcb6ff5d071ae295f27ca505ee7e3c24ca43997a6a787
+prev  : 4eb490a96dd3ef58a1d15e54a4a54c32ca3ec7235db664b2c22ce7dc23606b47
+link  : d668a777ab31aace2b272183b021a447e8b35a5503e5b8368aae33d130ced7cb
+head  : 3447d3a0533aaf1e29a8bdc67a9774884fb3ae9dbc8a17064b7a008ca3c4ec90
+
+— the tether: link = sha256(index|slug|seal|prev). the chain head commits to the whole corpus.
